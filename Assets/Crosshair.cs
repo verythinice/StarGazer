@@ -4,21 +4,26 @@ using System.Collections;
 public class Crosshair : Rotate 
 {
     public float baseRotationSpeed;
-    public Camera camera;
+    public float speed = 5;
+    public float deadZone=.5f;
+
+    private InputGetter inputGetter;
 
     public virtual void Start()
     {
         baseRotationSpeed = rotationSpeed;
-        camera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+        inputGetter = GameObject.FindGameObjectWithTag("InputManager").GetComponent<InputGetter>();
     }
 
     // Update is called once per frame
 	public override void Update()
     {
-        Vector3 inputPosition = Input.mousePosition;
-        Vector3 ray = camera.ScreenToWorldPoint(inputPosition);//camera.ScreenToWorldPoint(new Vector3(Screen.width - inputPosition.x, Screen.height - inputPosition.y, camera.transform.position.z));
-        ray.z = 0;
-        transform.position = ray;
+        Vector2 targetLocation = inputGetter.getInputLocation();
+        float distanceToTarget = (targetLocation - (Vector2)transform.position).magnitude;
+        if (distanceToTarget > deadZone)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, targetLocation, distanceToTarget * speed * Time.deltaTime);
+        }
 
         if (Base.target != null)
         {

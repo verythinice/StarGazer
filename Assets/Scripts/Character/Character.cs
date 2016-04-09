@@ -55,7 +55,6 @@ public class Character : Base
 
     public virtual void OnMouseOver()
     {
-        print("Stop poking me!");
         if (Base.mouseInput)
         {
             OnTargeting();
@@ -69,6 +68,8 @@ public class Character : Base
             OnDetarget();
         }
     }
+
+
 
     public virtual void OnTriggerEnter2D(Collider2D other)
     {

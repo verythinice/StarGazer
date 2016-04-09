@@ -9,10 +9,6 @@ public class Range : MonoBehaviour
 	// Use this for initialization
 	void Start()
     {
-        if (startPosition == null)
-        {
-            startPosition = transform.position;
-        }
 	}
 	
 	// Update is called once per frame
