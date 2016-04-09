@@ -4,7 +4,7 @@ using System.Collections;
 public class HealthBarScript : Base {
 
     public RectTransform healthBarTransform;
-    float width;
+    float width, remainingRatio;
     Vector3 originalPosition;
 
 	// Use this for initialization
@@ -20,7 +20,7 @@ public class HealthBarScript : Base {
     {
         base.Update();
 
-        float remainingRatio = Mathf.Clamp01(1 - player.health / player.maxHealth);
+        remainingRatio = Mathf.Clamp01(1 - player.health / player.maxHealth);
         healthBarTransform.localPosition = new Vector3(
              remainingRatio * width + originalPosition.x,
             originalPosition.y, originalPosition.z);
