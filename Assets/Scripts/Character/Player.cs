@@ -16,8 +16,6 @@ public class Player : Character
 	public override void Update()
     {
         base.Update();
-        print(target);
-        print(targetingTime);
         float dt = Time.deltaTime;
         if (target != null)
         {
