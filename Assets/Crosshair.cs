@@ -16,7 +16,7 @@ public class Crosshair : Rotate
 	public override void Update()
     {
         Vector3 inputPosition = Input.mousePosition;
-        Vector3 ray = camera.ScreenToWorldPoint(new Vector3(Screen.width - inputPosition.x, Screen.height - inputPosition.y, camera.transform.position.z));
+        Vector3 ray = camera.ScreenToWorldPoint(inputPosition);//camera.ScreenToWorldPoint(new Vector3(Screen.width - inputPosition.x, Screen.height - inputPosition.y, camera.transform.position.z));
         ray.z = 0;
         transform.position = ray;
 
