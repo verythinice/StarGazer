@@ -60,6 +60,8 @@ public class Tiling : MonoBehaviour
                 tileRange.resetDistance.y = sizeY;
             }
         }
+
+        SetSpeed(speed);
 	}
 	
     Sprite SelectNewTileType()

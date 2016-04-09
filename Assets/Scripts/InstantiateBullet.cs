@@ -33,6 +33,11 @@ public class InstantiateBullet : MonoBehaviour {
             pos.Normalize();
 
 			laser_temp.direction = pos;
+
+            Transform start = laser_p.transform.GetChild(0).transform;
+            Vector3 direction = player.transform.position - start.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            start.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 			timeStamp = Time.time;
 		}
 	}
