@@ -8,6 +8,8 @@ public class Level : MonoBehaviour
     public float[] yPos;
     public float[] spawnTime;
     public int nextSpawn;
+    public float minX;
+    public float maxX;
 
 	// Use this for initialization
 	void Start()
@@ -19,8 +21,9 @@ public class Level : MonoBehaviour
 	void Update()
     {
         gameTime += Time.deltaTime;
-        if (nextSpawn < spawnTime.Length && gameTime >= spawnTime[nextSpawn])
+        while (nextSpawn < spawnTime.Length && gameTime >= spawnTime[nextSpawn])
         {
+            GameObject.Instantiate(spawn[nextSpawn], new Vector3(Random.Range(minX, maxX), yPos[nextSpawn], 0), Quaternion.identity);
             nextSpawn++;
         }
 	}

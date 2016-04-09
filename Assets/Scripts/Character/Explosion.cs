@@ -27,6 +27,7 @@ public class Explosion : MonoBehaviour
 	    if (depth == 0)
         {
             Destroy(gameObject);
+            return;
         }
 
         for (int i = 0; i < width; ++i)
@@ -39,5 +40,7 @@ public class Explosion : MonoBehaviour
             GameObject spawnedObject = (GameObject) GameObject.Instantiate(gameObject, jiggle + transform.position, Quaternion.identity);
             spawnedObject.GetComponent<Explosion>().depth -= 1;
         }
+
+        Destroy(gameObject);
 	}
 }

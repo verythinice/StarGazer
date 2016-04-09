@@ -26,6 +26,8 @@ public class Tiling : MonoBehaviour
 
     public List<Drift> floatingObjects;
 
+    public float distance;
+
     List<List<GameObject>> tiles;
     int bottomY;
     int bottomIndex;
@@ -36,6 +38,7 @@ public class Tiling : MonoBehaviour
         currentSpeed = speed;
         turbo = 5.0f;
         brakes = 3.0f;
+        distance = 0;
 
         tiles = new List<List<GameObject>>(sizeX);
         for (int i = 0; i < sizeX; ++i)
@@ -142,5 +145,7 @@ public class Tiling : MonoBehaviour
         {
             SetSpeed(speed);
         }
+
+        distance += currentSpeed * dt;
 	}
 }
