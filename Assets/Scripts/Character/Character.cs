@@ -3,6 +3,12 @@ using System.Collections;
 
 public class Character : Base
 {
+    public static int TT_NO_EFFECT = 0;
+    public static int TT_SHIELD = 1;
+    public static int TT_LOCK_ON = 2;
+    public static int TT_TRACTOR = 3;
+    public static int TT_EYE_BURN = 4;
+
     public int team;
     public int targetingType;
     public bool isStatic = false;
@@ -56,6 +62,14 @@ public class Character : Base
         }
     }
 
+    public virtual void OnMouseExit()
+    {
+        if (Base.mouseInput)
+        {
+            OnDetarget();
+        }
+    }
+
     public virtual void OnTriggerEnter2D(Collider2D other)
     {
         if (other.GetComponent<Character>() != null)
@@ -76,6 +90,14 @@ public class Character : Base
 
     public virtual void OnTargeting()
     {
-        health -= 10;
+        Base.SetTarget(this);
+    }
+
+    public virtual void OnDetarget()
+    {
+        if (Base.target == this)
+        {
+            Base.SetTarget(null);
+        }
     }
 }
