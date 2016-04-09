@@ -24,9 +24,9 @@ public class Player : Character
             targetingTime += dt;
             if (target.targetingType == Character.TT_LOCK_ON)
             {
-                if (targetingTime >= 3.0f)
+                if (targetingTime >= 1.0)
                 {
-                    targetingTime -= 3.0f;
+                    targetingTime -= 1.0f;
                     target.health -= 50;
                 }
             }
