@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Viewable : MonoBehaviour {
+public class Viewable : MonoBehaviour
+{
+    void HandleGazeEnter()
+    {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    }
+
+    void HandleGazeExit()
+    {
+
+    }
 }
