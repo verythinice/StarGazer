@@ -17,6 +17,16 @@ public class ShieldRotationScript : MonoBehaviour {
         {
             angle = -angle;
         }
-        transform.RotateAround(transform.parent.position, Vector3.forward, angle);
+        
+        if (angle.CompareTo(float.NaN) != 0)
+        {
+            transform.RotateAround(transform.parent.position, Vector3.forward, angle);
+        }
+        else
+        {
+            //print(transform.parent);
+            //print(transform.parent.position);
+            //print(angle);
+        }
 	}
 }

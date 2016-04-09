@@ -22,6 +22,9 @@ public class Tiling : MonoBehaviour
 
     public float turbo;
     public float brakes;
+    public float currentSpeed;
+
+    public List<Drift> floatingObjects;
 
     List<List<GameObject>> tiles;
     int bottomY;
@@ -30,6 +33,7 @@ public class Tiling : MonoBehaviour
 	// Use this for initialization
 	void Start()
     {
+        currentSpeed = speed;
         turbo = 5.0f;
         brakes = 3.0f;
 
@@ -80,6 +84,7 @@ public class Tiling : MonoBehaviour
 
     void SetSpeed(float speedToSet)
     {
+        currentSpeed = speedToSet;
         for (int i = 0; i < sizeX; ++i)
         {
             for (int j = 0; j < sizeY; ++j)
@@ -87,20 +92,53 @@ public class Tiling : MonoBehaviour
                 tiles[i][j].GetComponent<Drift>().speed = speedToSet;
             }
         }
+
+        List<Drift> activeFloatingObjects = new List<Drift>();
+        for (int i = 0; i < floatingObjects.Count; ++i)
+        {
+            if (floatingObjects[i] != null)
+            {
+                floatingObjects[i].speed = speedToSet;
+                activeFloatingObjects.Add(floatingObjects[i]);
+            }
+        }
+
+        floatingObjects = activeFloatingObjects;
+    }
+
+    public void AddFloatingObject(GameObject baseObject)
+    {
+        Drift drift = baseObject.AddComponent<Drift>();
+        drift.direction = new Vector3(0, 1, 0);
+        drift.speed = currentSpeed;
+        floatingObjects.Add(drift);
     }
 
 	// Update is called once per frame
 	void Update()
     {
+        bool speedSet = false;
+        float dt = Time.deltaTime;
 	    if (Input.GetKey(turboButton))
         {
-            SetSpeed(speed * turboSpeedMultiplier);
+            if (turbo > 0)
+            {
+                SetSpeed(speed * turboSpeedMultiplier);
+                speedSet = true;
+                turbo -= dt;
+            }
         }
         else if (Input.GetKey(brakeButton))
         {
-            SetSpeed(speed * brakesMultiplier);
+            if (brakes > 0)
+            {
+                SetSpeed(speed * brakesMultiplier);
+                speedSet = true;
+                brakes -= dt;
+            }
         }
-        else
+
+        if (!speedSet)
         {
             SetSpeed(speed);
         }

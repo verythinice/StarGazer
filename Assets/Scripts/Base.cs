@@ -3,17 +3,18 @@ using System.Collections;
 
 public class Base : MonoBehaviour
 {
-    Tiling background;
+    public Tiling background;
+    public static bool mouseInput = true;
+    public static Character target;
+    public static float targettingTime;
 
-	// Use this for initialization
-	void Start()
+	public virtual void Start()
     {
         background = GameObject.FindWithTag("background").GetComponent<Tiling>();
 	}
 	
-	// Update is called once per frame
-	void Update()
+	public virtual void Update()
     {
-	
+        
 	}
 }
