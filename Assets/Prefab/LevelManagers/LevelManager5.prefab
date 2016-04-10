@@ -59,7 +59,7 @@ MonoBehaviour:
   - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
   - {fileID: 195686, guid: 1a01e775f5ad741acb57e8ce7f88e1a0, type: 2}
   - {fileID: 195686, guid: 1a01e775f5ad741acb57e8ce7f88e1a0, type: 2}
-  - {fileID: 195686, guid: 1a01e775f5ad741acb57e8ce7f88e1a0, type: 2}
+  - {fileID: 130058, guid: 2a4cba1a0ce86a243bb477f0054fa646, type: 2}
   - {fileID: 195686, guid: 1a01e775f5ad741acb57e8ce7f88e1a0, type: 2}
   - {fileID: 195686, guid: 1a01e775f5ad741acb57e8ce7f88e1a0, type: 2}
   - {fileID: 195686, guid: 1a01e775f5ad741acb57e8ce7f88e1a0, type: 2}
@@ -131,52 +131,53 @@ MonoBehaviour:
   - -5
   - -5
   depth:
-  - 1
-  - 2
-  - 3
-  - 4
-  - 5
+  - 8
+  - 9
   - 10
   - 11
   - 12
   - 13
-  - 15
+  - 14
   - 15
   - 16
-  - 16
-  - 17
-  - 17
-  - 20
-  - 20
-  - 20
+  - 24
+  - 24
   - 28
   - 28
-  - 29
-  - 29
-  - 30
-  - 30
-  - 31
   - 32
-  - 33
-  - 34
-  - 35
-  - 36
-  - 37
+  - 32
   - 38
-  - 39
+  - 38
+  - 38
   - 40
-  - 41
+  - 40
   - 42
-  - 43
   - 44
-  - 45
-  - 45
+  - 46
+  - 47
+  - 48
+  - 49
+  - 50
+  - 50
+  - 50
+  - 52
+  - 52
+  - 55
+  - 55
+  - 60
+  - 60
+  - 65
+  - 65
+  - 65
+  - 70
+  - 70
   nextSpawn: 0
   minX: -8
   maxX: 8
-  maxDistance: 50
+  maxDistance: 75
   playerHealth: 200
   nextLevel: 6
+  extraEndLevelDelay: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

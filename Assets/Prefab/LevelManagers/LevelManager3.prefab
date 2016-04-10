@@ -81,27 +81,28 @@ MonoBehaviour:
   - -5
   - -5
   depth:
-  - 0
-  - 1
-  - 2
-  - 5
-  - 5
+  - 8
+  - 9
   - 10
-  - 10
-  - 15
-  - 16
-  - 17
   - 18
-  - 19
-  - 20
-  - 21
-  - 22
+  - 18
+  - 26
+  - 26
+  - 30
+  - 331
+  - 32
+  - 33
+  - 34
+  - 35
+  - 36
+  - 37
   nextSpawn: 0
   minX: -8
   maxX: 8
-  maxDistance: 30
+  maxDistance: 45
   playerHealth: 200
   nextLevel: 4
+  extraEndLevelDelay: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

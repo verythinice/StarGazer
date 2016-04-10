@@ -56,7 +56,6 @@ MonoBehaviour:
   - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
   - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
   - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
-  - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
   yPos:
   - -5
   - -5
@@ -65,22 +64,21 @@ MonoBehaviour:
   - -5
   - -5
   - -5
-  - -5
   depth:
-  - 5
-  - 5
-  - 10
-  - 15
-  - 15
+  - 8
+  - 8
+  - 14
+  - 14
   - 20
-  - 20
-  - 20
+  - 27
+  - 27
   nextSpawn: 0
   minX: -8
   maxX: 8
   maxDistance: 35
-  playerHealth: 120
+  playerHealth: 200
   nextLevel: 2
+  extraEndLevelDelay: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
