@@ -11,7 +11,7 @@ public class Laser : Base
     void OnTriggerStay2D(Collider2D other)
     {
         Character otherCharacter = other.GetComponent<Character>();
-        if (otherCharacter == null || otherCharacter.team == team)
+        if (otherCharacter == null || otherCharacter.team == team || otherCharacter.team == 5)
         {
             return;
         }

@@ -716,7 +716,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 417746, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
       propertyPath: m_Name
@@ -1080,7 +1080,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 417746, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
       propertyPath: m_Name
@@ -1281,7 +1281,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 436948, guid: 414cfaf422b985640b714ecf43148d58, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 414cfaf422b985640b714ecf43148d58, type: 2}
@@ -2048,7 +2048,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 417746, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11434818, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
       propertyPath: driftSpeedVariation
@@ -2190,7 +2190,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 417746, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
       propertyPath: m_Name
@@ -2536,7 +2536,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 417746, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
       propertyPath: m_Name
@@ -3700,7 +3700,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "if Stare On pickup\n   player::upgrade"
+  m_Text: Stare at capsules to restore health
 --- !u!222 &1287842524
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3811,7 +3811,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 417746, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
       propertyPath: m_Name
@@ -5274,7 +5274,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 417746, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
       propertyPath: m_Name
@@ -5341,7 +5341,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 417746, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
       propertyPath: m_Name
@@ -5554,7 +5554,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 403836, guid: 6427d2305de61044cb0871a972c08206, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6427d2305de61044cb0871a972c08206, type: 2}
@@ -5790,7 +5790,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 425106, guid: 671fc0d48bfd0f6498efa66c46b359df, type: 2}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 11499386, guid: 671fc0d48bfd0f6498efa66c46b359df, type: 2}
       propertyPath: inputType
@@ -6187,7 +6187,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "if Stare On astroid\n   laser::f__k astroid"
+  m_Text: 'Stare at asteroids
+
+    to lock on lasers'
 --- !u!222 &1998144589
 CanvasRenderer:
   m_ObjectHideFlags: 0
