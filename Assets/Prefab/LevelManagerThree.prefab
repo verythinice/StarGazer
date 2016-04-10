@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &413052
 Transform:
   m_ObjectHideFlags: 1
@@ -45,18 +45,19 @@ MonoBehaviour:
   pickupMod: 0
   damageMod: 0
   screenShake: 0
+  sound: {fileID: 0}
   gameTime: 0
   spawn:
   - {fileID: 195686, guid: 1a01e775f5ad741acb57e8ce7f88e1a0, type: 2}
   - {fileID: 195686, guid: 1a01e775f5ad741acb57e8ce7f88e1a0, type: 2}
   - {fileID: 195686, guid: 1a01e775f5ad741acb57e8ce7f88e1a0, type: 2}
-  - {fileID: 195686, guid: 1a01e775f5ad741acb57e8ce7f88e1a0, type: 2}
+  - {fileID: 164262, guid: d664715d46a353148b43264d8f2828b7, type: 2}
   - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
   - {fileID: 195686, guid: 1a01e775f5ad741acb57e8ce7f88e1a0, type: 2}
   - {fileID: 195686, guid: 1a01e775f5ad741acb57e8ce7f88e1a0, type: 2}
   - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
   - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
-  - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
+  - {fileID: 164262, guid: d664715d46a353148b43264d8f2828b7, type: 2}
   - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
   - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
   - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
@@ -97,6 +98,7 @@ MonoBehaviour:
   nextSpawn: 0
   minX: -8
   maxX: 8
+  maxDistance: 30
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

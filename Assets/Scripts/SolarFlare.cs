@@ -17,6 +17,7 @@ public class SolarFlare : Base
         timeSinceStart = 0.0f;
         warning = GameObject.Find("SolarFlareWarning");
         input = GameObject.Find("InputManager").GetComponent<InputGetter>();
+        sound.PlaySound(SoundManager.SoundID.SID_SOLAR_FLARE_WARNING);
 	}
 	
 	// Update is called once per frame
@@ -38,10 +39,12 @@ public class SolarFlare : Base
         if (timeSinceStart > delay - 1 && !warning.transform.GetChild(0).gameObject.activeInHierarchy)
         {
             SetWarningShown(true);
+            sound.PlaySound(SoundManager.SoundID.SID_SOLAR_FLARE_PHASE);
         }
 
         if (timeSinceStart > delay + duration)
         {
+            sound.PlaySound(SoundManager.SoundID.SID_SOLAR_FLARE_CLEAR);
             SetWarningShown(false);
             Destroy(gameObject);
         }

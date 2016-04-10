@@ -500,6 +500,7 @@ MonoBehaviour:
   pickupMod: 0
   damageMod: 0
   screenShake: 0
+  sound: {fileID: 0}
   team: 10
   targetingType: 0
   isStatic: 1
@@ -507,6 +508,7 @@ MonoBehaviour:
   maxHealth: 120
   health: 0
   explosion: {fileID: 0}
+  deathEffect: 0
   playerShield: {fileID: 0}
   playerLaser: {fileID: 0}
 --- !u!114 &11467826
@@ -520,8 +522,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ea9380b8f361604b90ef9581bb5d939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerObject: {fileID: 0}
+  player: {fileID: 0}
+  background: {fileID: 0}
+  pickupMod: 0
+  damageMod: 0
+  screenShake: 0
+  sound: {fileID: 0}
   team: 10
   damage: 60
+  timeSinceSound: 0
+  soundDelay: 0.5
 --- !u!114 &11471388
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -567,6 +578,7 @@ MonoBehaviour:
   pickupMod: 0
   damageMod: 0
   screenShake: 0
+  sound: {fileID: 0}
   team: 0
   targetingType: 0
   isStatic: 1
@@ -574,6 +586,7 @@ MonoBehaviour:
   maxHealth: 100000000
   health: 0
   explosion: {fileID: 0}
+  deathEffect: 0
 --- !u!212 &21229152
 SpriteRenderer:
   m_ObjectHideFlags: 1

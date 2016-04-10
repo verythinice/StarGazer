@@ -45,11 +45,12 @@ MonoBehaviour:
   pickupMod: 0
   damageMod: 0
   screenShake: 0
+  sound: {fileID: 0}
   gameTime: 0
   spawn:
   - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
   - {fileID: 160152, guid: 94ba123b74536e24f84ae214d43df0a8, type: 2}
-  - {fileID: 195686, guid: 1a01e775f5ad741acb57e8ce7f88e1a0, type: 2}
+  - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
   - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
   - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
   yPos:
@@ -67,6 +68,7 @@ MonoBehaviour:
   nextSpawn: 0
   minX: -8
   maxX: 8
+  maxDistance: 30
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

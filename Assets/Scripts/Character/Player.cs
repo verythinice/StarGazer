@@ -22,6 +22,7 @@ public class Player : Character
         playerShield.GetComponent<SpriteRenderer>().enabled = false;
         playerLaser.GetComponentInChildren<SpriteRenderer>().enabled = false;
         StartCoroutine(DelayedReload());
+        sound.PlaySound(SoundManager.SoundID.SID_PLAYER_DEAD);
     }
 
     public IEnumerator DelayedReload()
@@ -49,10 +50,19 @@ public class Player : Character
                 target = null;
 
                 Destroy(pickup.gameObject);
+                sound.PlaySound(SoundManager.SoundID.SID_PICKUP);
             }
         }
         else
         {
+            if (other.damage > 20)
+            {
+                sound.PlaySound(SoundManager.SoundID.SID_PLAYER_CRASH);
+            }
+            else
+            {
+                sound.PlaySound(SoundManager.SoundID.SID_PLAYER_HIT);
+            }
             health -= other.damage * damageMod;
         }
     }

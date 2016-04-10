@@ -15,12 +15,14 @@ public class Base : MonoBehaviour
 
     public float screenShake;
     private CameraShakeScript cameraShakeScript;
+    public SoundManager sound;
 
     public virtual void Start()
     {
         background = GameObject.FindWithTag("Background").GetComponent<Tiling>();
         playerObject = GameObject.FindWithTag("Player");
         player = playerObject.GetComponent<Character>();
+        sound = GameObject.FindWithTag("SoundManager").GetComponent<SoundManager>();
         pickupMod = 1.0f / PlayerPrefs.GetFloat("Difficulty", 1.0f);
         damageMod = PlayerPrefs.GetFloat("Difficulty", 1.0f);
         if (screenShake > 0)

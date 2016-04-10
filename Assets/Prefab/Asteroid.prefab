@@ -115,6 +115,7 @@ MonoBehaviour:
   pickupMod: 0
   damageMod: 0
   screenShake: 0
+  sound: {fileID: 0}
   team: 0
   targetingType: 2
   isStatic: 0
@@ -122,6 +123,7 @@ MonoBehaviour:
   maxHealth: 50
   health: 0
   explosion: {fileID: 196668, guid: 74fd6a0e5d9478b4993bc0a914d6ce8a, type: 2}
+  deathEffect: 10
 --- !u!114 &11424696
 MonoBehaviour:
   m_ObjectHideFlags: 1
