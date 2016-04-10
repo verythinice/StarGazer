@@ -28,6 +28,7 @@ public class Player : Character
         currentState = State.LEVEL_START;
         transform.position = new Vector2(0, 7);
         time = 0;
+        shakeScreen(3, 0.1f);
     }
 
     public override void OnDeath()
@@ -38,6 +39,7 @@ public class Player : Character
         playerLaser.GetComponentInChildren<SpriteRenderer>().enabled = false;
         StartCoroutine(DelayedReload());
         sound.PlaySound(SoundManager.SoundID.SID_PLAYER_DEAD);
+        shakeScreen(3, 1);
     }
 
     public IEnumerator DelayedReload()
@@ -183,5 +185,6 @@ public class Player : Character
         currentState = State.LEVEL_END;
         health = 20000;
         maxHealth = 20000;
+        shakeScreen(3, .1f);
     }
 }
