@@ -1420,7 +1420,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Tip: Using Your Lasers Lowers Your Shield'
+  m_Text: 'Tip: Your shield stays up when you use the laser'
 --- !u!222 &917460344
 CanvasRenderer:
   m_ObjectHideFlags: 0
