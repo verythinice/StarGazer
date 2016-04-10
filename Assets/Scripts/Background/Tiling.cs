@@ -32,6 +32,9 @@ public class Tiling : MonoBehaviour
     int bottomY;
     int bottomIndex;
 
+    public float maxDistance;
+    public bool levelComplete;
+
 	// Use this for initialization
 	void Start()
     {
@@ -148,6 +151,22 @@ public class Tiling : MonoBehaviour
             SetSpeed(speed);
         }
 
-        distance += currentSpeed * dt;
+        if (currentSpeed > speed)
+        {
+            distance += speed * 2.0f * dt;
+        }
+        else if (currentSpeed < speed)
+        {
+            distance += currentSpeed / 2.0f * dt;
+        }
+        else
+        {
+            distance += currentSpeed * dt;
+        }
+        
+        if (distance >= maxDistance)
+        {
+            levelComplete = true;
+        }
 	}
 }

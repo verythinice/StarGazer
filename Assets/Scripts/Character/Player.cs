@@ -15,6 +15,12 @@ public class Player : Character
         playerLaser.SetActive(false);
 	}
 
+    public override void OnDeath()
+    {
+        transform.Translate(new Vector3(0, 9001, 0));
+        Application.LoadLevel(Application.loadedLevel);
+    }
+
     public override void OnCollision(Character other)
     {
         health -= other.damage * damageMod;

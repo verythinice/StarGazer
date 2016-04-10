@@ -10,6 +10,12 @@ public class Level : Base
     public int nextSpawn;
     public float minX;
     public float maxX;
+    public float maxDistance;
+
+    public void Awake()
+    {
+        GameObject.FindWithTag("Background").GetComponent<Tiling>().maxDistance = maxDistance;
+    }
 
 	// Use this for initialization
 	public override void Start()
