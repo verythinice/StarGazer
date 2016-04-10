@@ -42,7 +42,7 @@ public class InputGetter : MonoBehaviour {
         }
         else
         {
-            return Input.GetMouseButton(1);
+            return !Input.GetMouseButton(1);
         }
     }
 }

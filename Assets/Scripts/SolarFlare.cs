@@ -1,28 +1,38 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SolarFlare : MonoBehaviour
+public class SolarFlare : Base
 {
     public float delay;
     public float duration;
     public float intensity;
     public float timeSinceStart;
     GameObject warning;
+    InputGetter input;
 
 	// Use this for initialization
-	void Start()
+	public override void Start()
     {
+        base.Start();
         timeSinceStart = 0.0f;
         warning = GameObject.Find("SolarFlareWarning");
+        input = GameObject.Find("InputManager").GetComponent<InputGetter>();
 	}
 	
 	// Update is called once per frame
-	void Update()
+	public override void Update()
     {
+        base.Update();
         timeSinceStart += Time.deltaTime;
         if (timeSinceStart > delay)
         {
             ClearAsteroids();
+
+            print(input.getInputPresence());
+            if (input.getInputPresence())
+            {
+                player.health -= intensity * Time.deltaTime * damageMod;
+            }
         }
 
         if (timeSinceStart > delay - 1 && !warning.transform.GetChild(0).gameObject.activeInHierarchy)

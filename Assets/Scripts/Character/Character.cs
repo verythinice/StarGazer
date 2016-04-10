@@ -56,7 +56,7 @@ public class Character : Base
     public virtual void OnTriggerEnter2D(Collider2D other)
     {
         Character otherCharacter = other.GetComponent<Character>();
-        if (otherCharacter != null && otherCharacter.team != -1)
+        if (otherCharacter != null && otherCharacter.team != -1 && team != -1)
         {
             OnCollision(otherCharacter);
         }

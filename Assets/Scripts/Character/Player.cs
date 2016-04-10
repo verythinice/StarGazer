@@ -15,9 +15,46 @@ public class Player : Character
         playerLaser.SetActive(false);
 	}
 
+    public override void OnDeath()
+    {
+        transform.Translate(new Vector3(0, 9001, 0));
+        GetComponent<SpriteRenderer>().enabled = false;
+        playerShield.GetComponent<SpriteRenderer>().enabled = false;
+        playerLaser.GetComponentInChildren<SpriteRenderer>().enabled = false;
+        StartCoroutine(DelayedReload());
+    }
+
+    public IEnumerator DelayedReload()
+    {
+        yield return new WaitForSeconds(2.0f); 
+        Application.LoadLevel(Application.loadedLevel);
+    }
+
     public override void OnCollision(Character other)
     {
-        health -= other.damage * damageMod;
+        if (other.team == 5)
+        {
+            Pickup pickup = target.gameObject.GetComponent<Pickup>();
+            if (pickup != null)
+            {
+                if (pickup.type == Pickup.PickupType.PT_HEALTH)
+                {
+                    player.health += pickup.intensity * base.pickupMod;
+                    if (health > maxHealth)
+                    {
+                        health = maxHealth;
+                    }
+                }
+                targetingTime = 0.0f;
+                target = null;
+
+                Destroy(pickup.gameObject);
+            }
+        }
+        else
+        {
+            health -= other.damage * damageMod;
+        }
     }
 
 	// Update is called once per frame
@@ -59,25 +96,8 @@ public class Player : Character
             }
             else if (target.targetingType == Character.TT_TRACTOR)
             {
-                if (targetingTime > 1.0f)
-                {
-                    Pickup pickup = target.gameObject.GetComponent<Pickup>();
-                    if (pickup != null)
-                    {
-                        if (pickup.type == Pickup.PickupType.PT_HEALTH)
-                        {
-                            player.health += pickup.intensity * base.pickupMod;
-                            if (health > maxHealth)
-                            {
-                                health = maxHealth;
-                            }
-                        }
-                        targetingTime = 0.0f;
-                        target = null;
-
-                        Destroy(pickup.gameObject);
-                    }
-                }
+                float distance = (target.transform.position - transform.position).magnitude;
+                target.transform.position = Vector3.MoveTowards(target.transform.position, transform.position, distance * Time.deltaTime);
             }
         }
         else

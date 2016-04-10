@@ -12,7 +12,7 @@ public class DistanceCircularBarScript : CircularBarScript {
 
     override public float getMaxAmount()
     {
-        return 10;
+        return base.background.maxDistance;
     }
 
 }
