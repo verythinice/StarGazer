@@ -35,6 +35,7 @@ public class Tiling : Base
     public float maxDistance;
     public bool levelComplete;
     public int nextLevel;
+    public float extraEndLevelDelay;
 
 	// Use this for initialization
 	public override void Start()
@@ -191,7 +192,7 @@ public class Tiling : Base
 
     public IEnumerator EndLevel()
     {
-        yield return new WaitForSeconds(4.0f);
+        yield return new WaitForSeconds(4.0f + extraEndLevelDelay);
         Application.LoadLevel(nextLevel);
     }
 }

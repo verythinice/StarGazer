@@ -13,6 +13,7 @@ public class Level : Base
     public float maxDistance;
     public float playerHealth;
     public int nextLevel;
+    public float extraEndLevelDelay;
 
     public void Awake()
     {
@@ -23,6 +24,7 @@ public class Level : Base
 
         GameObject.FindWithTag("Background").GetComponent<Tiling>().maxDistance = maxDistance;
         GameObject.FindWithTag("Background").GetComponent<Tiling>().nextLevel = nextLevel;
+        GameObject.FindWithTag("Background").GetComponent<Tiling>().extraEndLevelDelay = extraEndLevelDelay;
         GameObject.FindWithTag("Player").GetComponent<Player>().maxHealth = playerHealth;
     }
 

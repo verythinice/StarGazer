@@ -1,0 +1,154 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &125828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 439660}
+  - 114: {fileID: 11447622}
+  m_Layer: 0
+  m_Name: EndlessLevelManager
+  m_TagString: LevelManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &439660
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125828}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 269.5, y: 184.07257, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11447622
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 439ae4d4b34e6ab48b98308ebf59bfd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerObject: {fileID: 0}
+  player: {fileID: 0}
+  background: {fileID: 0}
+  difficulty: 0
+  pickupMod: 0
+  damageMod: 0
+  screenShake: 0
+  sound: {fileID: 0}
+  gameTime: 0
+  spawn:
+  - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
+  - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
+  - {fileID: 195686, guid: 1a01e775f5ad741acb57e8ce7f88e1a0, type: 2}
+  - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
+  - {fileID: 195686, guid: 1a01e775f5ad741acb57e8ce7f88e1a0, type: 2}
+  - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
+  - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
+  - {fileID: 164262, guid: d664715d46a353148b43264d8f2828b7, type: 2}
+  - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
+  - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
+  - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
+  - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
+  - {fileID: 195686, guid: 1a01e775f5ad741acb57e8ce7f88e1a0, type: 2}
+  - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
+  - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
+  - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
+  - {fileID: 164262, guid: d664715d46a353148b43264d8f2828b7, type: 2}
+  - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
+  - {fileID: 195686, guid: 1a01e775f5ad741acb57e8ce7f88e1a0, type: 2}
+  - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
+  yPos:
+  - -5
+  - -5
+  - -5
+  - -5
+  - -5
+  - -5
+  - -5
+  - -5
+  - -5
+  - -5
+  - -5
+  - -5
+  - -5
+  - -5
+  - -5
+  - -5
+  - -5
+  - -5
+  - -5
+  - -5
+  depth:
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  nextSpawn: 0
+  minX: -8
+  maxX: 8
+  maxDistance: 9001
+  playerHealth: 500
+  nextLevel: 0
+  spawnMin:
+  - 0.5
+  - 1
+  - 2
+  - 20
+  spawnBase:
+  - 2
+  - 3
+  - 8
+  - 20
+  spawnVariation:
+  - 1
+  - 2
+  - 4
+  - 10
+  spawnObject:
+  - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
+  - {fileID: 195686, guid: 1a01e775f5ad741acb57e8ce7f88e1a0, type: 2}
+  - {fileID: 130058, guid: 2a4cba1a0ce86a243bb477f0054fa646, type: 2}
+  - {fileID: 182296, guid: 5d7fc9c3674278d4a9cd3a14e5bba4e8, type: 2}
+  maxIntensity: 250
+  spawnY: -6
+  intensity: 0
+  nextSpawnDepth: []
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 125828}
+  m_IsPrefabParent: 1
