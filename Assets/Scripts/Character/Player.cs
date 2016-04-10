@@ -6,14 +6,29 @@ public class Player : Character
     public GameObject playerShield;
     public GameObject playerLaser;
 
-	// Use this for initialization
-	public override void Start()
+    public enum State
+    {
+        LEVEL_START,
+        PLAY,
+        LEVEL_END
+    }
+
+    private State currentState;
+    private float enterTime = 3;
+    private float exitTime = 3;
+    private float time;
+
+    // Use this for initialization
+    public override void Start()
     {
         base.Start();
         playerShield = GameObject.FindWithTag("Shield");
         playerLaser = transform.Find("PlayerLaser").gameObject;
         playerLaser.SetActive(false);
-	}
+        currentState = State.LEVEL_START;
+        transform.position = new Vector2(0, 7);
+        time = 0;
+    }
 
     public override void OnDeath()
     {
@@ -57,53 +72,103 @@ public class Player : Character
         }
     }
 
-	// Update is called once per frame
-	public override void Update()
+    // Update is called once per frame
+    public override void Update()
     {
-        base.Update();
-        float dt = Time.deltaTime;
-        if (target != null)
+        if (currentState == State.LEVEL_START)
         {
-            targetingTime += dt;
-            if (target.targetingType == Character.TT_LOCK_ON)
+            Vector2 startPosition = new Vector2(0, 7);
+            Vector2 targetPosition = new Vector2(0, 0);
+            //increment timer once per frame
+            time += Time.deltaTime;
+            if (time > enterTime)
             {
-                playerLaser.SetActive(true);
-                Vector3 direction = target.transform.position - player.transform.position;
-                Vector3 midpoint = player.transform.position + direction / 2;
-                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-                playerLaser.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-                float distance = Mathf.Sqrt(direction.x * direction.x + direction.y * direction.y);
-                playerLaser.transform.localScale = new Vector3(distance / 3, playerLaser.transform.localScale.y, playerLaser.transform.localScale.z);
-                playerLaser.transform.position = midpoint;
-            }
-            else
-            {
-                playerLaser.SetActive(false);
+                time = enterTime;
             }
 
-            if (target.targetingType == Character.TT_SHIELD || target.targetingType == Character.TT_NO_EFFECT)
+            float t = time / enterTime;
+            t = Mathf.Atan(Mathf.Atan(t * Mathf.PI * 0.5f)*Mathf.PI*0.5f);
+            transform.position = Vector3.Lerp(startPosition, targetPosition, t);
+
+            if (time == enterTime)
+            {
+                time = 0;
+                currentState = State.PLAY;
+            }
+            playerShield.SetActive(false);
+        }
+        else if (currentState == State.PLAY)
+        {
+            base.Update();
+            float dt = Time.deltaTime;
+            if (target != null)
+            {
+                targetingTime += dt;
+                if (target.targetingType == Character.TT_LOCK_ON)
+                {
+                    playerLaser.SetActive(true);
+                    Vector3 direction = target.transform.position - player.transform.position;
+                    Vector3 midpoint = player.transform.position + direction / 2;
+                    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                    playerLaser.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                    float distance = Mathf.Sqrt(direction.x * direction.x + direction.y * direction.y);
+                    playerLaser.transform.localScale = new Vector3(distance / 3, playerLaser.transform.localScale.y, playerLaser.transform.localScale.z);
+                    playerLaser.transform.position = midpoint;
+                }
+                else
+                {
+                    playerLaser.SetActive(false);
+                }
+
+                if (target.targetingType == Character.TT_SHIELD || target.targetingType == Character.TT_NO_EFFECT)
+                {
+                    playerShield.SetActive(true);
+                }
+                else
+                {
+                    playerShield.SetActive(false);
+                }
+
+                if (target.targetingType == Character.TT_EYE_BURN)
+                {
+                    player.health -= 1.0f * dt * damageMod;
+                }
+                else if (target.targetingType == Character.TT_TRACTOR)
+                {
+                    float distance = (target.transform.position - transform.position).magnitude;
+                    target.transform.position = Vector3.MoveTowards(target.transform.position, transform.position, distance * Time.deltaTime);
+                }
+                if (Input.GetMouseButtonDown(1))
+                {
+                    currentState = State.LEVEL_END;
+                }
+            }
+            else
             {
                 playerShield.SetActive(true);
+                playerLaser.SetActive(false);
             }
-            else
+        }
+        else if (currentState == State.LEVEL_END)
+        {
+            Vector2 startPosition = new Vector2(0, 0);
+            Vector2 targetPosition = new Vector2(0, -7);
+            //increment timer once per frame
+            time += Time.deltaTime;
+            if (time > exitTime)
             {
-                playerShield.SetActive(false);
+                time = exitTime;
             }
 
-            if (target.targetingType == Character.TT_EYE_BURN)
+            float t = time / exitTime;
+            t = Mathf.Pow(t,4);
+            transform.position = Vector3.Lerp(startPosition, targetPosition, t);
+
+            if (time == exitTime)
             {
-                player.health -= 1.0f * dt * damageMod;
+                Application.LoadLevel(Application.loadedLevel);
             }
-            else if (target.targetingType == Character.TT_TRACTOR)
-            {
-                float distance = (target.transform.position - transform.position).magnitude;
-                target.transform.position = Vector3.MoveTowards(target.transform.position, transform.position, distance * Time.deltaTime);
-            }
+            playerShield.SetActive(false);
         }
-        else
-        {
-            playerShield.SetActive(true);
-            playerLaser.SetActive(false);
-        }
-	}
+    }
 }
