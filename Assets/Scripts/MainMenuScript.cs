@@ -37,4 +37,14 @@ public class MainMenuScript : MonoBehaviour {
         title.SetActive(!title.activeSelf);
         ToggleMenuItem(menu);
     }
+
+    public void StartGameWithLevel(int i)
+    {
+        Application.LoadLevel(i);
+    }
+
+    public void StartGameWithName(string name)
+    {
+        Application.LoadLevel(name);
+    }
 }
