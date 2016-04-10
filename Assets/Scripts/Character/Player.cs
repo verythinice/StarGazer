@@ -35,7 +35,7 @@ public class Player : Character
     {
         if (other.team == 5)
         {
-            Pickup pickup = target.gameObject.GetComponent<Pickup>();
+            Pickup pickup = other.GetComponent<Pickup>();
             if (pickup != null)
             {
                 if (pickup.type == Pickup.PickupType.PT_HEALTH)
