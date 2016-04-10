@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SpawnCondition : MonoBehaviour {
-
+public class SpawnCondition : Base
+{
     public virtual bool ShouldSpawn()
     {
         return false;

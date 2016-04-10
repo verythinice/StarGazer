@@ -7,8 +7,9 @@ public class TimedSpawnCondition : SpawnCondition
     public float spawnTimeVariation;
     public float spawnReady;
 
-	void Start()
+	public override void Start()
     {
+        base.Start();
         spawnReady = GetNewSpawnTime();
 	}
 	
@@ -17,8 +18,9 @@ public class TimedSpawnCondition : SpawnCondition
         return spawnTimeBase + Random.Range(-spawnTimeVariation, spawnTimeVariation);
     }
 
-    public void Update()
+    public override void Update()
     {
+        base.Update();
         spawnReady -= Time.deltaTime;
     }
 

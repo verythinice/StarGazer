@@ -8,9 +8,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 417746}
-  - 114: {fileID: 11490660}
   - 114: {fileID: 11434818}
   - 114: {fileID: 11467174}
+  - 114: {fileID: 11472402}
   m_Layer: 0
   m_Name: AsteroidSpawner
   m_TagString: Untagged
@@ -59,12 +59,14 @@ MonoBehaviour:
   playerObject: {fileID: 0}
   player: {fileID: 0}
   background: {fileID: 0}
+  difficulty: 0
   pickupMod: 0
   damageMod: 0
   screenShake: 0
+  sound: {fileID: 0}
   startDepth: 0
   depthAlive: 12
---- !u!114 &11490660
+--- !u!114 &11472402
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -72,12 +74,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 165152}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 363244b006758be41b4e9e31b5c41b16, type: 3}
+  m_Script: {fileID: 11500000, guid: 94d6d95e2b92ae24d82d3337b7dd34b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTimeBase: 2
-  spawnTimeVariation: 1
-  spawnReady: 0
+  playerObject: {fileID: 0}
+  player: {fileID: 0}
+  background: {fileID: 0}
+  difficulty: 0
+  pickupMod: 0
+  damageMod: 0
+  screenShake: 0
+  sound: {fileID: 0}
+  startDepth: 0
+  depthBase: 2
+  depthVariation: 1
+  nextSpawn: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

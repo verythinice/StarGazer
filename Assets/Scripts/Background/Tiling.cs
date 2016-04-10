@@ -35,6 +35,7 @@ public class Tiling : Base
     public float maxDistance;
     public bool levelComplete;
     public int nextLevel;
+    public float extraEndLevelDelay;
 
 	// Use this for initialization
 	public override void Start()
@@ -158,23 +159,23 @@ public class Tiling : Base
 
         // You move down too fast still.
         print(difficulty);
-        float distanceMultiplier = 0.75f;
+        float distanceMultiplier = 1.0f;
         if (difficulty < 1.0f)
         {
-            distanceMultiplier -= 0.5f;
+            distanceMultiplier -= 0.25f;
         }
         else if (difficulty > 1.0f)
         {
-            distanceMultiplier += 1.5f;
+            distanceMultiplier += 0.25f;
         }
 
         if (currentSpeed > speed)
         {
-            distanceMultiplier += 1.0f;
+            distanceMultiplier += 0.5f;
         }
         else if (currentSpeed < speed)
         {
-            distanceMultiplier -= 1.0f;
+            distanceMultiplier -= 0.25f;
         }
 
         print(distanceMultiplier);
@@ -191,7 +192,7 @@ public class Tiling : Base
 
     public IEnumerator EndLevel()
     {
-        yield return new WaitForSeconds(4.0f);
+        yield return new WaitForSeconds(4.0f + extraEndLevelDelay);
         Application.LoadLevel(nextLevel);
     }
 }
