@@ -53,30 +53,25 @@ public class Character : Base
         Destroy(gameObject);
     }
 
-    public virtual void OnMouseOver()
+    public virtual void OnTriggerEnter2D(Collider2D other)
     {
-        if (Base.mouseInput)
+        Character otherCharacter = other.GetComponent<Character>();
+        if (otherCharacter != null && otherCharacter.team != -1)
+        {
+            OnCollision(otherCharacter);
+        }
+
+        if (other.tag == "Crosshair")
         {
             OnTargeting();
         }
     }
 
-    public virtual void OnMouseExit()
+    public virtual void OnTriggerExit2D(Collider2D other)
     {
-        if (Base.mouseInput)
+        if (other.tag == "Crosshair" && otherCharacter.team != -1 && team != -1)
         {
             OnDetarget();
-        }
-    }
-
-
-
-    public virtual void OnTriggerEnter2D(Collider2D other)
-    {
-        Character otherCharacter = other.GetComponent<Character>();
-        if (otherCharacter != null && otherCharacter.team != -1 && team != -1)
-        {
-            OnCollision(otherCharacter);
         }
     }
 
