@@ -50,12 +50,23 @@ public class Player : Character
             }
             else if (target.targetingType == Character.TT_TRACTOR)
             {
-                Pickup pickup = target.gameObject.GetComponent<Pickup>();
-                if (pickup != null)
+                if (targetingTime > 1.0f)
                 {
-                    if (pickup.type == Pickup.PickupType.PT_HEALTH)
+                    Pickup pickup = target.gameObject.GetComponent<Pickup>();
+                    if (pickup != null)
                     {
-                        player.health += pickup.intensity * base.pickupMod;
+                        if (pickup.type == Pickup.PickupType.PT_HEALTH)
+                        {
+                            player.health += pickup.intensity * base.pickupMod;
+                            if (health > maxHealth)
+                            {
+                                health = maxHealth;
+                            }
+                        }
+                        targetingTime = 0.0f;
+                        target = null;
+
+                        Destroy(pickup.gameObject);
                     }
                 }
             }

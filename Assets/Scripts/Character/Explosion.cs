@@ -13,8 +13,8 @@ public class Explosion : MonoBehaviour
 	// Use this for initialization
 	void Start()
     {
-        print(depth);
-        print(width);
+        print(PlayerPrefs.GetFloat("MichaelBay", 1.0f));
+        width = Mathf.RoundToInt(width * PlayerPrefs.GetFloat("MichaelBay", 1.0f));
         GameObject spawnedGraphic = (GameObject)GameObject.Instantiate(graphic, transform.position, Quaternion.identity);
         Vector3 direction = new Vector3(0, 0, 0);
         direction.x = Random.Range(-1.0f, 1.0f);

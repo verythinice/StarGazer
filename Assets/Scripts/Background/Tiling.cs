@@ -36,8 +36,8 @@ public class Tiling : MonoBehaviour
 	void Start()
     {
         currentSpeed = speed;
-        turbo = 5.0f;
-        brakes = 3.0f;
+        turbo = 50000.0f;
+        brakes = 50000.0f;
         distance = 0;
 
         tiles = new List<List<GameObject>>(sizeX);

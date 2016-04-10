@@ -27,7 +27,6 @@ public class Crosshair : Rotate
 
         if (Base.target != null)
         {
-            print("Target found!");
             rotationSpeed = -baseRotationSpeed * 8.0f;
         }
         else
