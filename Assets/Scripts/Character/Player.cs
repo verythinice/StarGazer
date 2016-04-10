@@ -43,7 +43,16 @@ public class Player : Character
             {
                 playerLaser.SetActive(false);
             }
-            
+
+            if (target.targetingType == Character.TT_SHIELD || target.targetingType == Character.TT_NO_EFFECT)
+            {
+                playerShield.SetActive(true);
+            }
+            else
+            {
+                playerShield.SetActive(false);
+            }
+
             if (target.targetingType == Character.TT_EYE_BURN)
             {
                 player.health -= 1.0f * dt * damageMod;
@@ -69,15 +78,6 @@ public class Player : Character
                         Destroy(pickup.gameObject);
                     }
                 }
-            }
-
-            if (target.targetingType == Character.TT_SHIELD || target.targetingType == Character.TT_NO_EFFECT)
-            {
-                playerShield.SetActive(true);
-            }
-            else
-            {
-                playerShield.SetActive(false);
             }
         }
         else

@@ -69,7 +69,7 @@ public class Character : Base
 
     public virtual void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "Crosshair" && otherCharacter.team != -1 && team != -1)
+        if (other.tag == "Crosshair")
         {
             OnDetarget();
         }
