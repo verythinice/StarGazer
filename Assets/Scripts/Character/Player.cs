@@ -106,7 +106,7 @@ public class Player : Character
             }
             else if (target.targetingType == Character.TT_TRACTOR)
             {
-                float distance = (target.transform.position - transform.position).magnitude;
+                float distance = (target.transform.position - transform.position).magnitude + 1.0f;
                 target.transform.position = Vector3.MoveTowards(target.transform.position, transform.position, distance * Time.deltaTime);
             }
         }

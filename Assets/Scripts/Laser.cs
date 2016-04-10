@@ -23,6 +23,6 @@ public class Laser : Base
             sound.PlaySound(SoundManager.SoundID.SID_PLAYER_LASER);
         }
         
-        otherCharacter.health -= damage * Time.deltaTime;
+        otherCharacter.health -= damage * (1 / difficulty) * Time.deltaTime;
     }
 }

@@ -155,18 +155,26 @@ public class Tiling : Base
             SetSpeed(speed);
         }
 
+        float distanceMultiplier = 1.0f;
+        if (difficulty < 1.0f)
+        {
+            distanceMultiplier = 0.5f;
+        }
+        else if (difficulty > 1.0f)
+        {
+            distanceMultiplier = 1.5f;
+        }
+
         if (currentSpeed > speed)
         {
-            distance += speed * 2.0f * dt;
+            distanceMultiplier += 1.0f;
         }
         else if (currentSpeed < speed)
         {
-            distance += currentSpeed / 2.0f * dt;
+            distanceMultiplier -= 1.0f;
         }
-        else
-        {
-            distance += currentSpeed * dt;
-        }
+        
+        distance += currentSpeed * dt * distanceMultiplier;
         
         if (distance >= maxDistance)
         {
