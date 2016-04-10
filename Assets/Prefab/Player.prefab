@@ -486,7 +486,7 @@ MonoBehaviour:
   difficulty: 0
   pickupMod: 0
   damageMod: 0
-  screenShake: 0
+  screenShake: 1
   sound: {fileID: 0}
   team: 10
   targetingType: 0
