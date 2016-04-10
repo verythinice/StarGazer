@@ -158,7 +158,6 @@ public class Tiling : Base
         }
 
         // You move down too fast still.
-        print(difficulty);
         float distanceMultiplier = 1.0f;
         if (difficulty < 1.0f)
         {
@@ -178,7 +177,6 @@ public class Tiling : Base
             distanceMultiplier -= 0.25f;
         }
 
-        print(distanceMultiplier);
         distance += currentSpeed * dt * distanceMultiplier;
         
         if (distance >= maxDistance && !levelComplete)
