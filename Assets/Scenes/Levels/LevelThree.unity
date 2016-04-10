@@ -258,6 +258,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 11448582, guid: 59e6a2fee3c62b3489637520152faa0f, type: 2}
+      propertyPath: spawn.Array.data[0]
+      value: 
+      objectReference: {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
+    - target: {fileID: 11448582, guid: 59e6a2fee3c62b3489637520152faa0f, type: 2}
+      propertyPath: spawn.Array.data[1]
+      value: 
+      objectReference: {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 59e6a2fee3c62b3489637520152faa0f, type: 2}
   m_IsPrefabParent: 0
@@ -383,7 +391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

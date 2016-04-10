@@ -31,11 +31,11 @@ public class Movement : MonoBehaviour
 
         if (transform.localPosition.x < min.x)
         {
-            transform.localPosition = new Vector3(max.x, transform.localPosition.y, transform.localPosition.z);
+            transform.localPosition = new Vector3(min.x, transform.localPosition.y, transform.localPosition.z);
         }
         else if (transform.localPosition.x > max.x)
         {
-            transform.localPosition = new Vector3(min.x, transform.localPosition.y, transform.localPosition.z);
+            transform.localPosition = new Vector3(max.x, transform.localPosition.y, transform.localPosition.z);
         }
 	}
 }

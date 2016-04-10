@@ -68,5 +68,11 @@ public class SolarFlare : Base
         {
             asteroids[i].GetComponent<Character>().health = 0;
         }
+
+        GameObject[] lasers = GameObject.FindGameObjectsWithTag("Laser");
+        for (int i = 0; i < lasers.Length; ++i)
+        {
+            Destroy(lasers[i]);
+        }
     }
 }

@@ -11,6 +11,7 @@ TagManager:
   - Crosshair
   - SoundManager
   - LevelManager
+  - Laser
   layers:
   - Default
   - TransparentFX
