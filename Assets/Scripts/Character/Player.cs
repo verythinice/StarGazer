@@ -104,10 +104,12 @@ public class Player : Character
             {
                 time = 0;
                 currentState = State.PLAY;
+                background.turbo = 50000;
                 SetChildrenActive(GameObject.Find("StartMessage"), false);
             }
             else
             {
+                background.turbo = 0;
                 SetChildrenActive(GameObject.Find("StartMessage"), true);
             }
             playerShield.SetActive(false);

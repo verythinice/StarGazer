@@ -12,6 +12,15 @@ public class InputGetter : MonoBehaviour {
     private EyeTrackerScript eyeTrackerScript;
 	// Use this for initialization
 	void Start () {
+        if (PlayerPrefs.GetInt("UseMouse") == 1)
+        {
+            inputType = InputType.MOUSE;
+        }
+        else
+        {
+            inputType = InputType.TOBII_EYE;
+        }
+
         if (inputType == InputType.TOBII_EYE)
         {
             eyeTrackerScript = GetComponent<EyeTrackerScript>();
