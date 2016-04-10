@@ -25,3 +25,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/LevelEight.unity
   - enabled: 1
     path: Assets/Scenes/Levels/LevelNine.unity
+  - enabled: 1
+    path: Assets/Scenes/Levels/EndlessLevel.unity
