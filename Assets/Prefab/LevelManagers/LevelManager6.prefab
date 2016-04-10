@@ -144,7 +144,7 @@ MonoBehaviour:
   nextSpawn: 0
   minX: -8
   maxX: 8
-  maxDistance: 35
+  maxDistance: 55
   playerHealth: 200
   nextLevel: 7
   extraEndLevelDelay: 0
