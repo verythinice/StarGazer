@@ -7,6 +7,8 @@ public class Movement : MonoBehaviour
     public Vector3 axis;
     public KeyCode forward;
     public KeyCode backward;
+    public Vector3 min;
+    public Vector3 max;
 
 	// Use this for initialization
 	void Start()
@@ -25,6 +27,15 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(backward))
         {
             transform.Translate(-axis * speed);
+        }
+
+        if (transform.localPosition.x < min.x)
+        {
+            transform.localPosition = new Vector3(max.x, transform.localPosition.y, transform.localPosition.z);
+        }
+        else if (transform.localPosition.x > max.x)
+        {
+            transform.localPosition = new Vector3(min.x, transform.localPosition.y, transform.localPosition.z);
         }
 	}
 }
