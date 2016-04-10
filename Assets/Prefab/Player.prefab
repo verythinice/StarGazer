@@ -80,7 +80,6 @@ GameObject:
   - 4: {fileID: 436948}
   - 212: {fileID: 21276610}
   - 114: {fileID: 11481518}
-  - 114: {fileID: 11420626}
   - 60: {fileID: 6001154}
   - 50: {fileID: 5000790}
   - 114: {fileID: 11443990}
@@ -134,7 +133,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 185556}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 9001, z: -1}
+  m_LocalPosition: {x: 0, y: 0.923, z: -1}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 419912}
@@ -470,19 +469,6 @@ PolygonCollider2D:
       - {x: -0.005859375, y: 0.5722656}
       - {x: -0.005859375, y: 0.5800781}
       - {x: -0.0078125, y: 0.58203125}
---- !u!114 &11420626
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 185556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6736afa8e5c18d45b1a5f12cabe9c3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  center: {x: 0, y: 0}
-  bounds: {x: 7, y: 15000}
 --- !u!114 &11443990
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -497,6 +483,7 @@ MonoBehaviour:
   playerObject: {fileID: 0}
   player: {fileID: 0}
   background: {fileID: 0}
+  difficulty: 0
   pickupMod: 0
   damageMod: 0
   screenShake: 0
@@ -525,6 +512,7 @@ MonoBehaviour:
   playerObject: {fileID: 0}
   player: {fileID: 0}
   background: {fileID: 0}
+  difficulty: 0
   pickupMod: 0
   damageMod: 0
   screenShake: 0
@@ -561,6 +549,8 @@ MonoBehaviour:
   axis: {x: 1, y: 0, z: 0}
   forward: 100
   backward: 97
+  min: {x: -7, y: 0, z: 0}
+  max: {x: 7, y: 0, z: 0}
 --- !u!114 &11486950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -575,6 +565,7 @@ MonoBehaviour:
   playerObject: {fileID: 0}
   player: {fileID: 0}
   background: {fileID: 0}
+  difficulty: 0
   pickupMod: 0
   damageMod: 0
   screenShake: 0
