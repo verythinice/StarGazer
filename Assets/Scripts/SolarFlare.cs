@@ -28,8 +28,6 @@ public class SolarFlare : Base
         if (timeSinceStart > delay)
         {
             ClearAsteroids();
-
-            print(input.getInputPresence());
             if (input.getInputPresence())
             {
                 player.health -= intensity * Time.deltaTime * damageMod;
@@ -52,10 +50,7 @@ public class SolarFlare : Base
 
     void SetWarningShown(bool shown)
     {
-        for (int i = 0; i < warning.transform.childCount; ++i)
-        {
-            warning.transform.GetChild(i).gameObject.SetActive(shown);
-        }
+        SetChildrenActive(warning, shown);
     }
 
     void ClearAsteroids()

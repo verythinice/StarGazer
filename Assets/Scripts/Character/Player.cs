@@ -104,6 +104,11 @@ public class Player : Character
             {
                 time = 0;
                 currentState = State.PLAY;
+                SetChildrenActive(GameObject.Find("StartMessage"), false);
+            }
+            else
+            {
+                SetChildrenActive(GameObject.Find("StartMessage"), true);
             }
             playerShield.SetActive(false);
         }
@@ -172,9 +177,17 @@ public class Player : Character
 
             if (time == exitTime)
             {
-                Application.LoadLevel(Application.loadedLevel);
+                // We do this in Tiling now.
+                //Application.LoadLevel(Application.loadedLevel);
             }
             playerShield.SetActive(false);
         }
+    }
+
+    public void PlayEndAnimation()
+    {
+        currentState = State.LEVEL_END;
+        health = 20000;
+        maxHealth = 20000;
     }
 }

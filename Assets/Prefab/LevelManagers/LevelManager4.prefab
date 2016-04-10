@@ -1,39 +1,39 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &104670
+--- !u!1 &155716
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 413052}
-  - 114: {fileID: 11448582}
+  - 4: {fileID: 418852}
+  - 114: {fileID: 11497954}
   m_Layer: 0
-  m_Name: LevelManagerThree
-  m_TagString: Untagged
+  m_Name: LevelManager4
+  m_TagString: LevelManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &413052
+--- !u!4 &418852
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 104670}
+  m_GameObject: {fileID: 155716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.591189, y: 2.133143, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11448582
+--- !u!114 &11497954
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 104670}
+  m_GameObject: {fileID: 155716}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28931aeb5a2f507439897998ef5badb8, type: 3}
@@ -42,28 +42,39 @@ MonoBehaviour:
   playerObject: {fileID: 0}
   player: {fileID: 0}
   background: {fileID: 0}
+  difficulty: 0
   pickupMod: 0
   damageMod: 0
   screenShake: 0
   sound: {fileID: 0}
   gameTime: 0
   spawn:
-  - {fileID: 195686, guid: 1a01e775f5ad741acb57e8ce7f88e1a0, type: 2}
-  - {fileID: 195686, guid: 1a01e775f5ad741acb57e8ce7f88e1a0, type: 2}
-  - {fileID: 195686, guid: 1a01e775f5ad741acb57e8ce7f88e1a0, type: 2}
-  - {fileID: 164262, guid: d664715d46a353148b43264d8f2828b7, type: 2}
   - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
   - {fileID: 195686, guid: 1a01e775f5ad741acb57e8ce7f88e1a0, type: 2}
   - {fileID: 195686, guid: 1a01e775f5ad741acb57e8ce7f88e1a0, type: 2}
+  - {fileID: 130058, guid: 2a4cba1a0ce86a243bb477f0054fa646, type: 2}
+  - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
+  - {fileID: 182296, guid: 5d7fc9c3674278d4a9cd3a14e5bba4e8, type: 2}
+  - {fileID: 195686, guid: 1a01e775f5ad741acb57e8ce7f88e1a0, type: 2}
   - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
   - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
-  - {fileID: 164262, guid: d664715d46a353148b43264d8f2828b7, type: 2}
+  - {fileID: 130058, guid: 2a4cba1a0ce86a243bb477f0054fa646, type: 2}
   - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
+  - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
+  - {fileID: 195686, guid: 1a01e775f5ad741acb57e8ce7f88e1a0, type: 2}
+  - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
+  - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
+  - {fileID: 195686, guid: 1a01e775f5ad741acb57e8ce7f88e1a0, type: 2}
   - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
   - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
   - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
   - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
   yPos:
+  - -5
+  - -5
+  - -5
+  - -5
+  - -5
   - -5
   - -5
   - -5
@@ -95,10 +106,17 @@ MonoBehaviour:
   - 20
   - 21
   - 22
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
   nextSpawn: 0
   minX: -8
   maxX: 8
-  maxDistance: 30
+  maxDistance: 35
+  playerHealth: 200
+  nextLevel: 5
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -108,5 +126,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 104670}
+  m_RootGameObject: {fileID: 155716}
   m_IsPrefabParent: 1

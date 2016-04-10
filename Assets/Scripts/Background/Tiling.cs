@@ -34,6 +34,7 @@ public class Tiling : Base
 
     public float maxDistance;
     public bool levelComplete;
+    public int nextLevel;
 
 	// Use this for initialization
 	public override void Start()
@@ -155,14 +156,16 @@ public class Tiling : Base
             SetSpeed(speed);
         }
 
-        float distanceMultiplier = 1.0f;
+        // You move down too fast still.
+        print(difficulty);
+        float distanceMultiplier = 0.75f;
         if (difficulty < 1.0f)
         {
-            distanceMultiplier = 0.5f;
+            distanceMultiplier -= 0.5f;
         }
         else if (difficulty > 1.0f)
         {
-            distanceMultiplier = 1.5f;
+            distanceMultiplier += 1.5f;
         }
 
         if (currentSpeed > speed)
@@ -173,12 +176,22 @@ public class Tiling : Base
         {
             distanceMultiplier -= 1.0f;
         }
-        
+
+        print(distanceMultiplier);
         distance += currentSpeed * dt * distanceMultiplier;
         
-        if (distance >= maxDistance)
+        if (distance >= maxDistance && !levelComplete)
         {
             levelComplete = true;
+            SetChildrenActive(GameObject.Find("EndMessage"), true);
+            player.PlayEndAnimation();
+            StartCoroutine("EndLevel");
         }
 	}
+
+    public IEnumerator EndLevel()
+    {
+        yield return new WaitForSeconds(4.0f);
+        Application.LoadLevel(nextLevel);
+    }
 }

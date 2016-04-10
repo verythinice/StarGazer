@@ -10,6 +10,7 @@ TagManager:
   - InputManager
   - Crosshair
   - SoundManager
+  - LevelManager
   layers:
   - Default
   - TransparentFX

@@ -36,7 +36,6 @@ public class SoundManager : MonoBehaviour
     {
 	    if (!musicPlayer.isPlaying)
         {
-            print("Starting new music");
             musicPlayer.PlayOneShot(music[Random.Range(0, music.Length)]);
         }
 	}

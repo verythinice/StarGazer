@@ -11,10 +11,19 @@ public class Level : Base
     public float minX;
     public float maxX;
     public float maxDistance;
+    public float playerHealth;
+    public int nextLevel;
 
     public void Awake()
     {
+        if (playerHealth == 0)
+        {
+            playerHealth = 200;
+        }
+
         GameObject.FindWithTag("Background").GetComponent<Tiling>().maxDistance = maxDistance;
+        GameObject.FindWithTag("Background").GetComponent<Tiling>().nextLevel = nextLevel;
+        GameObject.FindWithTag("Player").GetComponent<Player>().maxHealth = playerHealth;
     }
 
 	// Use this for initialization

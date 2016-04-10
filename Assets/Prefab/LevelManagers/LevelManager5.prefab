@@ -10,12 +10,12 @@ GameObject:
   - 4: {fileID: 483020}
   - 114: {fileID: 11471128}
   m_Layer: 0
-  m_Name: LevelManagerFive
-  m_TagString: Untagged
+  m_Name: LevelManager5
+  m_TagString: LevelManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &483020
 Transform:
   m_ObjectHideFlags: 1
@@ -42,9 +42,11 @@ MonoBehaviour:
   playerObject: {fileID: 0}
   player: {fileID: 0}
   background: {fileID: 0}
+  difficulty: 0
   pickupMod: 0
   damageMod: 0
   screenShake: 0
+  sound: {fileID: 0}
   gameTime: 0
   spawn:
   - {fileID: 195686, guid: 1a01e775f5ad741acb57e8ce7f88e1a0, type: 2}
@@ -172,6 +174,9 @@ MonoBehaviour:
   nextSpawn: 0
   minX: -8
   maxX: 8
+  maxDistance: 50
+  playerHealth: 200
+  nextLevel: 6
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

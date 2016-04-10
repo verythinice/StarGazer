@@ -10,12 +10,12 @@ GameObject:
   - 4: {fileID: 473762}
   - 114: {fileID: 11480186}
   m_Layer: 0
-  m_Name: LevelManagerOne
-  m_TagString: Untagged
+  m_Name: LevelManager1
+  m_TagString: LevelManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &473762
 Transform:
   m_ObjectHideFlags: 1
@@ -42,6 +42,7 @@ MonoBehaviour:
   playerObject: {fileID: 0}
   player: {fileID: 0}
   background: {fileID: 0}
+  difficulty: 0
   pickupMod: 0
   damageMod: 0
   screenShake: 0
@@ -53,22 +54,33 @@ MonoBehaviour:
   - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
   - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
   - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
+  - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
+  - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
+  - {fileID: 165152, guid: 4377f714b4b688547b64e23fd0ccf86f, type: 2}
   yPos:
   - -5
   - -5
   - -5
   - -5
   - -5
+  - -5
+  - -5
+  - -5
   depth:
-  - 0
-  - 0
+  - 5
   - 5
   - 10
-  - 10
+  - 15
+  - 15
+  - 20
+  - 20
+  - 20
   nextSpawn: 0
   minX: -8
   maxX: 8
-  maxDistance: 30
+  maxDistance: 35
+  playerHealth: 120
+  nextLevel: 2
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

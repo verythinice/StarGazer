@@ -4,7 +4,7 @@ using System.Collections;
 public class Base : MonoBehaviour
 {
     public GameObject playerObject;
-    public Character player;
+    public Player player;
     public Tiling background;
     public static bool mouseInput = true;
     public static Character target;
@@ -22,7 +22,7 @@ public class Base : MonoBehaviour
     {
         background = GameObject.FindWithTag("Background").GetComponent<Tiling>();
         playerObject = GameObject.FindWithTag("Player");
-        player = playerObject.GetComponent<Character>();
+        player = playerObject.GetComponent<Player>();
         sound = GameObject.FindWithTag("SoundManager").GetComponent<SoundManager>();
         difficulty = PlayerPrefs.GetFloat("Difficulty", 1.0f);
         pickupMod = 1.0f / PlayerPrefs.GetFloat("Difficulty", 1.0f);
@@ -37,6 +37,19 @@ public class Base : MonoBehaviour
     {
         
 	}
+
+    public void SetChildrenActive(GameObject parent, bool active)
+    {
+        if (parent == null)
+        {
+            return;
+        }
+
+        for (int i = 0; i < parent.transform.childCount; ++i)
+        {
+            parent.transform.GetChild(i).gameObject.SetActive(active);
+        }
+    }
 
     public static void SetTarget(Character character)
     {
