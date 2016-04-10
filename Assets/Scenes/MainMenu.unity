@@ -1593,8 +1593,8 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -31.6, y: -11.6}
-  m_SizeDelta: {x: 43.3, y: 43.3}
+  m_AnchoredPosition: {x: -15, y: -13.6}
+  m_SizeDelta: {x: 146.2, y: 30.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &534813253
 MonoBehaviour:
@@ -1617,7 +1617,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: d6a314504952d4b3fa36772e9a762ac5, type: 3}
-    m_FontSize: 28
+    m_FontSize: 23
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1628,7 +1628,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: a
+  m_Text: a - left
 --- !u!222 &534813254
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1896,8 +1896,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.2, y: 19.6}
-  m_SizeDelta: {x: 43.3, y: 43.3}
+  m_AnchoredPosition: {x: -15, y: 47}
+  m_SizeDelta: {x: 146.2, y: 30.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &584693972
 MonoBehaviour:
@@ -1920,7 +1920,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: d6a314504952d4b3fa36772e9a762ac5, type: 3}
-    m_FontSize: 28
+    m_FontSize: 23
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1931,7 +1931,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: W
+  m_Text: W - brake
 --- !u!222 &584693973
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1969,8 +1969,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.2, y: -11.6}
-  m_SizeDelta: {x: 43.3, y: 43.3}
+  m_AnchoredPosition: {x: -15, y: 16.7}
+  m_SizeDelta: {x: 146.2, y: 30.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &617060836
 MonoBehaviour:
@@ -1993,7 +1993,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: d6a314504952d4b3fa36772e9a762ac5, type: 3}
-    m_FontSize: 28
+    m_FontSize: 23
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -2004,7 +2004,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: s
+  m_Text: s - boost
 --- !u!222 &617060837
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3665,8 +3665,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000030994415, y: 73.45}
-  m_SizeDelta: {x: 225.35, y: 73}
+  m_AnchoredPosition: {x: 0.000005722046, y: 73.45}
+  m_SizeDelta: {x: 327.8, y: 73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1287842523
 MonoBehaviour:
@@ -3694,13 +3694,15 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 87
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Stare at capsules to restore health
+  m_Text: 'Stare at capsules
+
+    to restore health'
 --- !u!222 &1287842524
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4795,8 +4797,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5, y: -25.8}
-  m_SizeDelta: {x: 81.3, y: 51.6}
+  m_AnchoredPosition: {x: 10.6, y: -30.7}
+  m_SizeDelta: {x: 288.1, y: 147}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1632746645
 GameObject:
@@ -5711,8 +5713,8 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 34.2, y: -11.6}
-  m_SizeDelta: {x: 43.3, y: 43.3}
+  m_AnchoredPosition: {x: -15, y: -43.8}
+  m_SizeDelta: {x: 146.2, y: 30.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1864738781
 MonoBehaviour:
@@ -5735,7 +5737,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: d6a314504952d4b3fa36772e9a762ac5, type: 3}
-    m_FontSize: 28
+    m_FontSize: 23
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -5746,7 +5748,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: d
+  m_Text: d - right
 --- !u!222 &1864738782
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6152,8 +6154,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000023841858, y: 73.45}
-  m_SizeDelta: {x: 274.3, y: 73}
+  m_AnchoredPosition: {x: 3.8, y: 73.45}
+  m_SizeDelta: {x: 328.8, y: 73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1998144588
 MonoBehaviour:
@@ -6181,7 +6183,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 87
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
