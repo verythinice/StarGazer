@@ -32,7 +32,29 @@ public class Player : Character
 
     public override void OnCollision(Character other)
     {
-        health -= other.damage * damageMod;
+        if (other.team == 5)
+        {
+            Pickup pickup = target.gameObject.GetComponent<Pickup>();
+            if (pickup != null)
+            {
+                if (pickup.type == Pickup.PickupType.PT_HEALTH)
+                {
+                    player.health += pickup.intensity * base.pickupMod;
+                    if (health > maxHealth)
+                    {
+                        health = maxHealth;
+                    }
+                }
+                targetingTime = 0.0f;
+                target = null;
+
+                Destroy(pickup.gameObject);
+            }
+        }
+        else
+        {
+            health -= other.damage * damageMod;
+        }
     }
 
 	// Update is called once per frame
@@ -74,25 +96,8 @@ public class Player : Character
             }
             else if (target.targetingType == Character.TT_TRACTOR)
             {
-                if (targetingTime > 1.0f)
-                {
-                    Pickup pickup = target.gameObject.GetComponent<Pickup>();
-                    if (pickup != null)
-                    {
-                        if (pickup.type == Pickup.PickupType.PT_HEALTH)
-                        {
-                            player.health += pickup.intensity * base.pickupMod;
-                            if (health > maxHealth)
-                            {
-                                health = maxHealth;
-                            }
-                        }
-                        targetingTime = 0.0f;
-                        target = null;
-
-                        Destroy(pickup.gameObject);
-                    }
-                }
+                float distance = (target.transform.position - transform.position).magnitude;
+                target.transform.position = Vector3.MoveTowards(target.transform.position, transform.position, distance * Time.deltaTime);
             }
         }
         else
