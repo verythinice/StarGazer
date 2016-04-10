@@ -12,7 +12,7 @@ public class InputGetter : MonoBehaviour {
     private EyeTrackerScript eyeTrackerScript;
 	// Use this for initialization
 	void Start () {
-        if (PlayerPrefs.GetInt("UseMouse") == 1)
+        if (PlayerPrefs.GetInt("UseMouse", 0) == 1)
         {
             inputType = InputType.MOUSE;
         }
