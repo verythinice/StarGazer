@@ -4,9 +4,11 @@ using System.Collections;
 public class ShieldRotationScript : MonoBehaviour {
 
     private InputGetter inputGetter;
+    public float speed = 5;
+    public float deadZone = 5;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         inputGetter = GameObject.FindGameObjectWithTag("InputManager").GetComponent<InputGetter>();
     }
 	
@@ -14,15 +16,23 @@ public class ShieldRotationScript : MonoBehaviour {
 	void Update () {
         Vector2 targetPos = inputGetter.getInputLocation();
         Vector2 direction = targetPos - (Vector2)transform.parent.position;
-        float angle = Mathf.Acos(Mathf.Clamp(Vector2.Dot(direction, transform.up) / (direction.magnitude * transform.up.magnitude),0,1))*Mathf.Rad2Deg;
-        if (Vector2.Dot(direction, new Vector2(-transform.up.y, transform.up.x)) < 0)
+        float angle = Vector2.Angle(transform.up, direction);
+        if (Mathf.Abs(angle) > deadZone)
         {
-            angle = -angle;
-        }
-        
-        if (angle.CompareTo(float.NaN) != 0)
-        {
+            float orthagonalDirection = Vector2.Dot(direction, new Vector2(-transform.up.y, transform.up.x));
+            if (orthagonalDirection < 0)
+            {
+                angle = -angle;
+            }
+            else if (orthagonalDirection == 0)
+            {
+                if (Vector2.Dot(Vector2.up, direction) > 0)
+                {
+                    angle = -angle;
+                }
+            }
             transform.RotateAround(transform.parent.position, Vector3.forward, angle);
         }
-	}
+
+    }
 }
