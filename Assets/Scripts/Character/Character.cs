@@ -16,6 +16,7 @@ public class Character : Base
     public float maxHealth;
     public float health;
     public GameObject explosion;
+    public SoundManager.SoundID deathEffect;
 
 	// Use this for initialization
 	public override void Start()
@@ -49,6 +50,7 @@ public class Character : Base
         {
             GameObject.Instantiate(explosion, transform.position, Quaternion.identity);
         }
+        sound.PlaySound(deathEffect);
         shakeScreen();
         Destroy(gameObject);
     }
@@ -77,7 +79,7 @@ public class Character : Base
 
     public virtual void OnCollision(Character other)
     {
-        if (team == other.team)
+        if (team == other.team || other.team == 5 || team == 5)
         {
             return;
         }

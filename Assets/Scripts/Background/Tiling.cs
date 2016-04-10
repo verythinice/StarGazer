@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Tiling : MonoBehaviour
+public class Tiling : Base
 {
     public Sprite[] tileTypes;
     public GameObject tile;
@@ -36,8 +36,9 @@ public class Tiling : MonoBehaviour
     public bool levelComplete;
 
 	// Use this for initialization
-	void Start()
+	public override void Start()
     {
+        base.Start();
         currentSpeed = speed;
         turbo = 50000.0f;
         brakes = 50000.0f;
@@ -123,17 +124,19 @@ public class Tiling : MonoBehaviour
     }
 
 	// Update is called once per frame
-	void Update()
+	public override void Update()
     {
+        base.Update();
         bool speedSet = false;
         float dt = Time.deltaTime;
 	    if (Input.GetKey(turboButton))
         {
-            if (turbo > 0)
+            if (turbo > 0 && player.health > 10.0f)
             {
                 SetSpeed(speed * turboSpeedMultiplier);
                 speedSet = true;
                 turbo -= dt;
+                player.health -= 10.0f * damageMod * dt;
             }
         }
         else if (Input.GetKey(brakeButton))
@@ -143,6 +146,7 @@ public class Tiling : MonoBehaviour
                 SetSpeed(speed * brakesMultiplier);
                 speedSet = true;
                 brakes -= dt;
+                player.health += 5.0f * (1 / damageMod) * dt;
             }
         }
 
@@ -151,18 +155,26 @@ public class Tiling : MonoBehaviour
             SetSpeed(speed);
         }
 
+        float distanceMultiplier = 1.0f;
+        if (difficulty < 1.0f)
+        {
+            distanceMultiplier = 0.5f;
+        }
+        else if (difficulty > 1.0f)
+        {
+            distanceMultiplier = 1.5f;
+        }
+
         if (currentSpeed > speed)
         {
-            distance += speed * 2.0f * dt;
+            distanceMultiplier += 1.0f;
         }
         else if (currentSpeed < speed)
         {
-            distance += currentSpeed / 2.0f * dt;
+            distanceMultiplier -= 1.0f;
         }
-        else
-        {
-            distance += currentSpeed * dt;
-        }
+        
+        distance += currentSpeed * dt * distanceMultiplier;
         
         if (distance >= maxDistance)
         {

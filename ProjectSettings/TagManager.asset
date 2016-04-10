@@ -9,6 +9,7 @@ TagManager:
   - Asteroid
   - InputManager
   - Crosshair
+  - SoundManager
   layers:
   - Default
   - TransparentFX

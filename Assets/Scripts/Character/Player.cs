@@ -37,6 +37,7 @@ public class Player : Character
         playerShield.GetComponent<SpriteRenderer>().enabled = false;
         playerLaser.GetComponentInChildren<SpriteRenderer>().enabled = false;
         StartCoroutine(DelayedReload());
+        sound.PlaySound(SoundManager.SoundID.SID_PLAYER_DEAD);
     }
 
     public IEnumerator DelayedReload()
@@ -49,7 +50,7 @@ public class Player : Character
     {
         if (other.team == 5)
         {
-            Pickup pickup = target.gameObject.GetComponent<Pickup>();
+            Pickup pickup = other.GetComponent<Pickup>();
             if (pickup != null)
             {
                 if (pickup.type == Pickup.PickupType.PT_HEALTH)
@@ -64,10 +65,19 @@ public class Player : Character
                 target = null;
 
                 Destroy(pickup.gameObject);
+                sound.PlaySound(SoundManager.SoundID.SID_PICKUP);
             }
         }
         else
         {
+            if (other.damage > 20)
+            {
+                sound.PlaySound(SoundManager.SoundID.SID_PLAYER_CRASH);
+            }
+            else
+            {
+                sound.PlaySound(SoundManager.SoundID.SID_PLAYER_HIT);
+            }
             health -= other.damage * damageMod;
         }
     }
@@ -135,12 +145,8 @@ public class Player : Character
                 }
                 else if (target.targetingType == Character.TT_TRACTOR)
                 {
-                    float distance = (target.transform.position - transform.position).magnitude;
+                    float distance = (target.transform.position - transform.position).magnitude + 1.0f;
                     target.transform.position = Vector3.MoveTowards(target.transform.position, transform.position, distance * Time.deltaTime);
-                }
-                if (Input.GetMouseButtonDown(1))
-                {
-                    currentState = State.LEVEL_END;
                 }
             }
             else

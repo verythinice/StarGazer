@@ -10,17 +10,21 @@ public class Base : MonoBehaviour
     public static Character target;
     public static float targetingTime;
 
+    public float difficulty;
     public float pickupMod;
     public float damageMod;
 
     public float screenShake;
     private CameraShakeScript cameraShakeScript;
+    public SoundManager sound;
 
     public virtual void Start()
     {
         background = GameObject.FindWithTag("Background").GetComponent<Tiling>();
         playerObject = GameObject.FindWithTag("Player");
         player = playerObject.GetComponent<Character>();
+        sound = GameObject.FindWithTag("SoundManager").GetComponent<SoundManager>();
+        difficulty = PlayerPrefs.GetFloat("Difficulty", 1.0f);
         pickupMod = 1.0f / PlayerPrefs.GetFloat("Difficulty", 1.0f);
         damageMod = PlayerPrefs.GetFloat("Difficulty", 1.0f);
         if (screenShake > 0)
