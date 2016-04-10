@@ -2280,7 +2280,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Tip: Boosting Damages Your Pod and Braking Recharges It'
+  m_Text: The Level ends when the blue altimeter is empty
 --- !u!222 &1339491715
 CanvasRenderer:
   m_ObjectHideFlags: 0

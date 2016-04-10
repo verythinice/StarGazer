@@ -3,6 +3,8 @@ using System.Collections;
 
 public class SolarFlare : Base
 {
+    public GameObject solarFlareVisual;
+    bool spawned;
     public float delay;
     public float duration;
     public float intensity;
@@ -18,6 +20,7 @@ public class SolarFlare : Base
         warning = GameObject.Find("SolarFlareWarning");
         input = GameObject.Find("InputManager").GetComponent<InputGetter>();
         sound.PlaySound(SoundManager.SoundID.SID_SOLAR_FLARE_WARNING);
+        spawned = false;
 	}
 	
 	// Update is called once per frame
@@ -31,6 +34,11 @@ public class SolarFlare : Base
             if (input.getInputPresence())
             {
                 player.health -= intensity * Time.deltaTime * damageMod;
+            }
+            if (!spawned)
+            {
+                GameObject.Instantiate(solarFlareVisual);
+                spawned = true;
             }
         }
 

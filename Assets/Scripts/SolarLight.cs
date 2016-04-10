@@ -9,7 +9,7 @@ public class SolarLight : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         lensFlare = GetComponent<LensFlare>();
-        for (int i = 0; i < 30; i++){
+        for (int i = 0; i < 20; i++){
            
                 lensFlare.brightness += 2;
             

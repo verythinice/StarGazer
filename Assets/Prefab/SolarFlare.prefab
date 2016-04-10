@@ -43,9 +43,12 @@ MonoBehaviour:
   playerObject: {fileID: 0}
   player: {fileID: 0}
   background: {fileID: 0}
+  difficulty: 0
   pickupMod: 0
   damageMod: 0
   screenShake: 0
+  sound: {fileID: 0}
+  solarFlareVisual: {fileID: 168902, guid: 5e20e49e9b651ff46a2e2a586b7c367a, type: 2}
   delay: 3
   duration: 3
   intensity: 35
