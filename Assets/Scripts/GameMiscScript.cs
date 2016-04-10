@@ -7,7 +7,7 @@ public class GameMiscScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        crossHair = GameObject.FindWithTag("Crosshair").transform;
 	}
 	
 	// Update is called once per frame
