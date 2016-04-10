@@ -13,14 +13,21 @@ public class Base : MonoBehaviour
     public float pickupMod;
     public float damageMod;
 
-	public virtual void Start()
+    public float screenShake;
+    private CameraShakeScript cameraShakeScript;
+
+    public virtual void Start()
     {
         background = GameObject.FindWithTag("Background").GetComponent<Tiling>();
         playerObject = GameObject.FindWithTag("Player");
         player = playerObject.GetComponent<Character>();
         pickupMod = 1.0f / PlayerPrefs.GetFloat("Difficulty", 1.0f);
         damageMod = PlayerPrefs.GetFloat("Difficulty", 1.0f);
-	}
+        if (screenShake > 0)
+        {
+            cameraShakeScript = Camera.main.gameObject.GetComponent<CameraShakeScript>();
+        }
+    }
 	
 	public virtual void Update()
     {
@@ -36,5 +43,30 @@ public class Base : MonoBehaviour
 
         targetingTime = 0.0f;
         target = character;
+    }
+
+    //Overloads for controlling screenshake
+    protected void shakeScreen()
+    {
+        if (screenShake > 0)
+        {
+            shakeScreen(screenShake);
+        }
+    }
+
+    protected void shakeScreen(float shake)
+    {
+        if (cameraShakeScript != null)
+        {
+            cameraShakeScript.screenShake(shake);
+        }
+    }
+
+    protected void shakeScreen(float shake, float shakeAmount)
+    {
+        if (cameraShakeScript != null)
+        {
+            cameraShakeScript.screenShake(shakeAmount, shake);
+        }
     }
 }

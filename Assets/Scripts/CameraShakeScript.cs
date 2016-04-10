@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CameraShakeScript : MonoBehaviour
 {
-
+    public static float DEFAULT_SHAKE_AMOUNT = .7f;
     // How long the object should shake for.
     public float shake = 0f;
 
@@ -50,10 +50,17 @@ public class CameraShakeScript : MonoBehaviour
         }
     }
 
+    //COME ON AND SLAM
+    public void screenShake(float shake)
+    {
+        this.shake += shake;
+        shakeAmount = DEFAULT_SHAKE_AMOUNT;
+    }
+
     //AND WELCOME TO THE JAM
     public void screenShake(float shakeAmount, float shake)
     {
-        this.shake = shake;
+        this.shake += shake;
         this.shakeAmount = shakeAmount;
     }
 }

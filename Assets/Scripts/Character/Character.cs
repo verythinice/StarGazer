@@ -49,7 +49,7 @@ public class Character : Base
         {
             GameObject.Instantiate(explosion, transform.position, Quaternion.identity);
         }
-        
+        shakeScreen();
         Destroy(gameObject);
     }
 
