@@ -177,6 +177,7 @@ public class Player : Character
                 //Application.LoadLevel(Application.loadedLevel);
             }
             playerShield.SetActive(false);
+            playerLaser.SetActive(false);
         }
     }
 
