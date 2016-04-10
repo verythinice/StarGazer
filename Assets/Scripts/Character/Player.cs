@@ -18,6 +18,15 @@ public class Player : Character
     public override void OnDeath()
     {
         transform.Translate(new Vector3(0, 9001, 0));
+        GetComponent<SpriteRenderer>().enabled = false;
+        playerShield.GetComponent<SpriteRenderer>().enabled = false;
+        playerLaser.GetComponentInChildren<SpriteRenderer>().enabled = false;
+        StartCoroutine(DelayedReload());
+    }
+
+    public IEnumerator DelayedReload()
+    {
+        yield return new WaitForSeconds(2.0f); 
         Application.LoadLevel(Application.loadedLevel);
     }
 
