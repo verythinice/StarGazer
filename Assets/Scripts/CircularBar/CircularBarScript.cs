@@ -7,6 +7,7 @@ public abstract class CircularBarScript : Base {
 
     public Image circular;
     public float remainingRatio, maxLength;
+    public bool invertFill;
 
     // Use this for initialization
     public override void Start()
@@ -21,7 +22,7 @@ public abstract class CircularBarScript : Base {
         base.Update();
 
         remainingRatio = Mathf.Clamp01(getCurrentAmount() / getMaxAmount());
-        circular.fillAmount = maxLength * remainingRatio;
+        circular.fillAmount = maxLength * (invertFill ? 1 - remainingRatio : remainingRatio);
     }
 
     //  should override this in a new class to use

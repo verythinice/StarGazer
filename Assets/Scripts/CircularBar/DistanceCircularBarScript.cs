@@ -7,12 +7,12 @@ public class DistanceCircularBarScript : CircularBarScript {
 
     override public float getCurrentAmount()
     {
-        return base.background.dis;
+        return base.background.distance;
     }
 
     override public float getMaxAmount()
     {
-        return base.player.maxHealth;
+        return 10;
     }
 
 }
